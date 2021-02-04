@@ -8,7 +8,6 @@ export default class DefaultProcessor implements ProcessorInterface {
             args = stage(args);
         });
 
-        console.log("Result", args);
         return args;
     }
 

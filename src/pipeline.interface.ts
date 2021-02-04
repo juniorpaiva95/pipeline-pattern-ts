@@ -1,7 +1,8 @@
-export default interface PipelineInterface {
+interface PipelineInterface {
     
     pipe(operation: CallableFunction): void;
 
-
     process(payload: any): any;
 }
+
+export default PipelineInterface;

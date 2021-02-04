@@ -10,10 +10,8 @@ export default class AsyncProcessor implements ProcessorInterface {
 
         let stageOutput = args;
 
-        console.log("INICIANDO PROCESSO ->>>>>>>", args, stages.length);
         stages.forEach(function (stage, counter) {
 
-            console.log('EITA', stageOutput && typeof stageOutput.then, typeof stageOutput.then === 'function');
             if (stageOutput && typeof stageOutput.then === 'function') {
                 // Chame a próxima fase apenas quando a promessa for cumprida
                 stageOutput = stageOutput.then(stage);
@@ -27,10 +25,8 @@ export default class AsyncProcessor implements ProcessorInterface {
                 }
             }
 
-            console.log("Retornando :", stageOutput)
-
         });
-        console.log("<----O que to retornando----->", stageOutput);
+
         return stageOutput;
     }
 
